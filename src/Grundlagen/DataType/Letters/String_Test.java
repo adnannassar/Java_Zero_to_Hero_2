@@ -1,4 +1,4 @@
-package DataType.Letters;
+package Grundlagen.DataType.Letters;
 
 public class String_Test {
     public static void main(String[] args) {

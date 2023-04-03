@@ -1,4 +1,4 @@
-package DataType.Number.FließkommaNumbers;
+package Grundlagen.DataType.Number.FließkommaNumbers;
 
 public class Double_Test {
 

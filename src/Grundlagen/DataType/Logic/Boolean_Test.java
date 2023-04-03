@@ -1,4 +1,4 @@
-package DataType.Logic;
+package Grundlagen.DataType.Logic;
 
 public class Boolean_Test {
     public static void main(String[] args) {

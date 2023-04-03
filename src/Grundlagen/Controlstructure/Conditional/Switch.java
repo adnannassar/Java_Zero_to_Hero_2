@@ -1,4 +1,4 @@
-package Controlstructure.Conditional;
+package Grundlagen.Controlstructure.Conditional;
 
 public class Switch {
     public static void main(String[] args) {

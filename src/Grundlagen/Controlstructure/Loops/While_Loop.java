@@ -1,4 +1,4 @@
-package Controlstructure.Loops;
+package Grundlagen.Controlstructure.Loops;
 
 public class While_Loop {
     public static void main(String[] args) {

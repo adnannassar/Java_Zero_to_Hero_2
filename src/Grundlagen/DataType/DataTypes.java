@@ -1,4 +1,4 @@
-package DataType;
+package Grundlagen.DataType;
 
 public class DataTypes {
     public static void main(String[] args) {

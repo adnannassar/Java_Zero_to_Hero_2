@@ -1,4 +1,4 @@
-package DataType.Number.NormalNumbers;
+package Grundlagen.DataType.Number.NormalNumbers;
 
 public class Byte_Test {
     public static void main(String[] args) {
