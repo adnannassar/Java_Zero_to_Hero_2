@@ -8,18 +8,55 @@ public class Blatt_000 {
 
     public static void main(String[] args) {
 
-        // zahlenVon1Bis10();
+        zahlenVon1Bis10();
         doFakultät();
-        //prime();
-        fibo();
-        // erratenVon1Bis100();
-        // summeGeradeZahlen();
-        // listeVonZahlen();
-        // vokalen();
-        //ggt();
-        //umkehren();
+        System.out.println("\nPrimzahl ist oder nicht:");
+        System.out.print("Bitte geben Sie ein Zahl: ");
+        int n = scanner.nextInt();
+        boolean isPrime = prime(n);
+        if (isPrime) {
+            System.out.println(n + " is prime");
+        } else {
+            System.out.println(n + " is not prime");
+        }
+
+        System.out.println("\nFibo until bound");
+        System.out.print("Bitte geben Sie ein Zahl: ");
+        int bound = scanner.nextInt();
+        fibo(bound);
+        erratenVon1Bis100();
+
+        System.out.println("\n\nSumme gerade Zahlen in einem Bereich");
+        System.out.print("Bitte geben Sie die erste Zahl ein: ");
+        int start = scanner.nextInt();
+        System.out.print("Bitte geben Sie die zweite Zahl ein: ");
+        int end = scanner.nextInt();
+        int summe = summeGeradeZahlen(start, end);
+        System.out.println("\nSummer gerade Zahlen zwischen " + start + " und " + end + " = " + summe);
 
 
+        listeVonZahlen();
+
+        System.out.println("\n\nVokalen");
+        System.out.print("Bitte geben Sie ein Text ein: ");
+        String text = scanner.nextLine();
+        vokalen(text);
+
+
+        System.out.println("\n\nGGT");
+        System.out.print("Bitte geben die erste Zahl ein: ");
+        int nr1 = scanner.nextInt();
+        System.out.print("Bitte geben die zweite Zahl ein: ");
+        int nr2 = scanner.nextInt();
+
+        int resultOfGgt = ggt(nr1, nr2);
+        System.out.println("GGT von " + nr1 + " und " + nr2 + " ist " + resultOfGgt);
+
+        System.out.println("\n\nUmkehren von String Zahl");
+        System.out.print("Bitte geben eine Zahl ein: ");
+        String number = scanner.next();
+        int reservedNumber = umkehren(number);
+        System.out.println("Backward: " + reservedNumber);
     }
 
     public static void zahlenVon1Bis10() {
@@ -37,7 +74,7 @@ public class Blatt_000 {
         return fak;
     }
 
-    public static void doFakultät(){
+    public static void doFakultät() {
         System.out.println("\n\nFakultät einer eingegebenen Zahl: ");
         System.out.print("Bitte geben Sie ein Zahl: ");
         int n = scanner.nextInt();
@@ -45,29 +82,21 @@ public class Blatt_000 {
         System.out.println("Fakultät von " + n + " = " + fak);
     }
 
-    //TODO --> function
-    public static void prime() {
-        System.out.println("\nPrimzahl ist oder nicht:");
-        System.out.print("Bitte geben Sie ein Zahl: ");
-        int m = scanner.nextInt();
+    public static boolean prime(int n) {
         int anzahlTeiler = 0;
-        for (int i = 1; i <= m; i++) {
-            if (m % i == 0) {
+        for (int i = 1; i <= n; i++) {
+            if (n % i == 0) {
                 anzahlTeiler++;
             }
         }
         if (anzahlTeiler == 2) {
-            System.out.println(m + " ist eine Primzahl");
+            return true;
         } else {
-            System.out.println(m + " ist keine Primzahl");
+            return false;
         }
     }
 
-    //TODO --> parameter
-    public static void fibo() {
-        System.out.println("\nFibo until bound");
-        System.out.print("Bitte geben Sie ein Zahl: ");
-        int bound = scanner.nextInt();
+    public static void fibo(int bound) {
         int a = 0;
         int b = 1;
         int c;
@@ -81,7 +110,6 @@ public class Blatt_000 {
     }
 
     public static void erratenVon1Bis100() {
-
         System.out.println("\n\nNummer Erraten");
         Random random = new Random();
         int numberToGuess = random.nextInt(100) + 1;
@@ -101,15 +129,8 @@ public class Blatt_000 {
         } while (userGuess != numberToGuess);
     }
 
-    //TODO --> function & parameter
-    public static void summeGeradeZahlen() {
-        System.out.println("\n\nSumme gerade Zahlen in einem Bereich");
-        System.out.print("Bitte geben Sie die erste Zahl ein: ");
-        int start = scanner.nextInt();
-        System.out.print("Bitte geben Sie die zweite Zahl ein: ");
-        int end = scanner.nextInt();
+    public static int summeGeradeZahlen(int start, int end) {
         int summe = 0;
-
         for (int i = start; i <= end; i++) {
             if (i % 2 == 0) {
                 summe += i;
@@ -120,7 +141,7 @@ public class Blatt_000 {
                 }
             }
         }
-        System.out.println("\nSummer gerade Zahlen zwischen " + start + " und " + end + " = " + summe);
+        return summe;
     }
 
     public static void listeVonZahlen() {
@@ -148,12 +169,7 @@ public class Blatt_000 {
         System.out.println("Anzahl der null Zahlen: " + zeroCount);
     }
 
-    //TODO --> parameter
-    public static void vokalen() {
-
-        System.out.println("\n\nVokalen");
-        System.out.print("Bitte geben Sie ein Text ein: ");
-        String text = scanner.next();
+    public static void vokalen(String text) {
         int vocalCounter = 0;
         int constantCounter = 0;
         for (int i = 0; i < text.length(); i++) {
@@ -169,28 +185,19 @@ public class Blatt_000 {
 
     }
 
-    //TODO --> function
-    public static void ggt() {
-        System.out.println("\n\nGGT");
-        System.out.print("Bitte geben die erste Zahl ein: ");
-        int nr1 = scanner.nextInt();
-        System.out.print("Bitte geben die zweite Zahl ein: ");
-        int nr2 = scanner.nextInt();
+
+    public static int ggt(int nr1, int nr2) {
         int ggt = 1;
         for (int i = 1; i <= nr1 && i <= nr2; i++) {
             if (nr1 % i == 0 && nr2 % i == 0) {
                 ggt = i;
             }
         }
-        System.out.println("GGT von " + nr1 + " und " + nr2 + " ist " + ggt);
+        return ggt;
     }
 
-    //TODO --> function
-    public static void umkehren() {
 
-        System.out.println("\n\nUmkehren von String Zahl");
-        System.out.print("Bitte geben eine Zahl ein: ");
-        String number = scanner.next();
+    public static int umkehren(String number) {
         System.out.println("Forward: " + number);
         System.out.print("Backward: ");
         for (int i = number.length() - 1; i >= 0; i--) {
@@ -206,7 +213,7 @@ public class Blatt_000 {
             reservedNumber = reservedNumber * 10 + number1 % 10;
             number1 = number1 / 10;
         }
-        System.out.println("Backward: " + reservedNumber);
+       return reservedNumber;
     }
 
 }
