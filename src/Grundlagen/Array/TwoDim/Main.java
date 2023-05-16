@@ -27,10 +27,9 @@ public class Main {
         // set
         array[1][0] = 400;
         array[1][1] = 500;
-        array[1][2] = 600;
+
         System.out.print(array[1][0] + " ");
         System.out.print(array[1][1] + " ");
-        System.out.print(array[1][2] + " ");
 
         System.out.println();
 
