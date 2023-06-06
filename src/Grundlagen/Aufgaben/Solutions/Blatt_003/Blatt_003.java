@@ -1,27 +1,29 @@
-package Grundlagen.Aufgaben.Solutions;
+package Grundlagen.Aufgaben.Solutions.Blatt_003;
 
 import Grundlagen.Array.TwoDim.Printer;
 
 public class Blatt_003 {
     public static void main(String[] args) {
 
-        Printer.print2dArray(erzeugeFeldEinfach(7));
+        Printer.print2dArray(erzeugeFeldEinfach(5, 6));
     }
 
-    private static char[][] erzeugeFeldEinfach(int size) {
-        char[][] array = new char[size][size];
-        int counter = 0;
-        for (int i = 0; i < array.length; i++) {
-            for (int j = 0; j < array[i].length; j++) {
-                array[i][j] = '0';
-                if (counter > 1 && counter <= 3) {
-                    array[i][j] = '1';
+    public static int[][] erzeugeFeldEinfach(int n, int m) {
+        int[][] feld = new int[n][m];
+
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < m; j++) {
+                if ((i / 2) % 2 == (j / 2) % 2) {
+                    feld[i][j] = 0;
+                } else {
+                    feld[i][j] = 1;
                 }
             }
-            counter++;
         }
-        return array;
+        return feld;
     }
+
+
 
 
     public static int[][] fuelleMatrix(int size) {
