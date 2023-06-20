@@ -1,6 +1,9 @@
 package Grundlagen.OOP.Exmaple_002;
 
 public class Geschäftsführer extends Manager {
+    /*
+    * zulage = 5000€
+    * */
 
     private double zulage;
 

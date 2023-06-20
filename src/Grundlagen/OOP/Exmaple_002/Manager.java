@@ -1,13 +1,19 @@
 package Grundlagen.OOP.Exmaple_002;
 
-public class Manager extends Mitarbeiter{
+public class Manager extends Mitarbeiter {
     private double festgehalt, provision, umsatz;
+    /*
+        festgehalt = 6500€
+        provision = 500€
+        umsatz = 3000€
+     * */
+
     public Manager(String name,
                    double festgehalt,
                    double provision,
                    Abteilung abt) {
         super(name, abt);
-        this.festgehalt = festgehalt ;
+        this.festgehalt = festgehalt;
         this.provision = provision;
     }
 
@@ -17,6 +23,6 @@ public class Manager extends Mitarbeiter{
 
     @Override
     public double berechneGehalt() {
-        return 0;
+        return festgehalt + provision + umsatz;
     }
 }

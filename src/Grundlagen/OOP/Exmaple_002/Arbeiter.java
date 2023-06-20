@@ -1,8 +1,13 @@
 package Grundlagen.OOP.Exmaple_002;
 
 public class Arbeiter extends Mitarbeiter {
+    /*
+     * stundenLohn = 12€
+     * überstundenzuschlag = 16€
+     * */
     private double stundenLohn, anzahlStunden,
-    überstundenzuschlag, anzahlÜberstunden;
+            überstundenzuschlag, anzahlÜberstunden;
+
     public Arbeiter(String name,
                     double stundenLohn,
                     double anzahlStunden,
@@ -22,6 +27,6 @@ public class Arbeiter extends Mitarbeiter {
 
     @Override
     public double berechneGehalt() {
-        return 0;
+        return (stundenLohn * anzahlStunden) + (überstundenzuschlag * anzahlÜberstunden);
     }
 }

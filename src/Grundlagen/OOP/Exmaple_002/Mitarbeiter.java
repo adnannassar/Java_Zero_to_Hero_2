@@ -2,10 +2,15 @@ package Grundlagen.OOP.Exmaple_002;
 
 public abstract class Mitarbeiter {
     private String name;
-    private static int personalnummer, anzahlMitarbeiter;
+    private int personalnummer;
+    private static int anzahlMitarbeiter;
+    private Abteilung abt;
 
     public Mitarbeiter(String name, Abteilung abt) {
         this.name = name;
+        this.abt = abt;
+        anzahlMitarbeiter++;
+        personalnummer = anzahlMitarbeiter;
     }
 
     public abstract double berechneGehalt();
@@ -18,10 +23,11 @@ public abstract class Mitarbeiter {
         this.name = name;
     }
 
-    public static int getPersonalnummer() {
+    public int getPersonalnummer() {
         return personalnummer;
     }
-    public Abteilung getAbteilung(){
-        return null;
+
+    public Abteilung getAbteilung() {
+        return this.abt;
     }
 }
