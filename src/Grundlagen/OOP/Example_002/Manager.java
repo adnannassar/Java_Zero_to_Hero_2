@@ -1,4 +1,4 @@
-package Grundlagen.OOP.Exmaple_002;
+package Grundlagen.OOP.Example_002;
 
 public class Manager extends Mitarbeiter {
     private double festgehalt, provision, umsatz;
